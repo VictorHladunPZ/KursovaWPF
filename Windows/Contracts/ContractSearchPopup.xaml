@@ -1,0 +1,60 @@
+﻿<Window x:Class="KursovaWPF.Windows.ContractSearchPopup"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:KursovaWPF.Windows"
+        mc:Ignorable="d"
+        Title="ContractSearchPopup" Height="560" Width="500"
+        WindowStyle="None">
+    <Border Background="#272537"
+CornerRadius="20" Margin="0,0,0,-16"
+        >
+        <Grid>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
+            </Grid.RowDefinitions>
+            <StackPanel Grid.Row="0" Grid.Column="0" Orientation="Vertical">
+
+                <StackPanel HorizontalAlignment="Center" Orientation="Horizontal">
+                    <Label FontSize="15" Foreground="White" HorizontalAlignment="Center"  Content="Start Date"/>
+                    <CheckBox FontSize="15" Foreground="White" VerticalContentAlignment="Center" HorizontalAlignment="Left" x:Name="StartDateCheckBox" Content="Filter StartDate"/>
+                </StackPanel>
+                <Label FontSize="15" Foreground="White" HorizontalAlignment="Center"  Content="Start Date (Floor)"/>
+                <DatePicker Width="250" HorizontalAlignment="Center" x:Name="StartDateFloorPicker"/>
+                <Label FontSize="15" Foreground="White" HorizontalAlignment="Center"  Content="Start Date (Ceiling)"/>
+                <DatePicker Width="250" HorizontalAlignment="Center" x:Name="StartDateCeilingPicker"/>
+
+                <StackPanel HorizontalAlignment="Center" Orientation="Horizontal">
+                    <Label FontSize="15" Foreground="White" HorizontalAlignment="Center"  Content="Deadline"/>
+                    <CheckBox FontSize="15" Foreground="White" VerticalContentAlignment="Center" HorizontalAlignment="Left" x:Name="DeadLineCheckBox" Content="Filter DeadLine"/>
+                </StackPanel>
+
+                <Label FontSize="15" Foreground="White" HorizontalAlignment="Center"  Content="Deadline Date (Floor)"/>
+                <DatePicker Width="250" HorizontalAlignment="Center"  x:Name="DeadlineFloorPicker"/>
+                <Label FontSize="15" Foreground="White" HorizontalAlignment="Center" Content="Deadline Date (Ceiling)"/>
+                <DatePicker Width="250" HorizontalAlignment="Center" x:Name="DeadlineCeilingPicker"/>
+
+                <StackPanel HorizontalAlignment="Center" Orientation="Horizontal">
+                    <Label FontSize="15" Foreground="White" HorizontalAlignment="Center"  Content="Cost"/>
+                    <CheckBox FontSize="15" Foreground="White" VerticalContentAlignment="Center" HorizontalAlignment="Left" x:Name="CostCheckBox" Content="Filter Cost"/>
+                </StackPanel>
+                <Label FontSize="15" Foreground="White" HorizontalAlignment="Center" Content="Cost Floor:"/>
+                
+                <TextBox Style="{StaticResource InputTextBox}" HorizontalAlignment="Center" Width="250"  x:Name="CostFloorTextBox"/>
+                <Label FontSize="15" Foreground="White" HorizontalAlignment="Center" Content="Cost Ceiling:"/>
+
+                <TextBox Style="{StaticResource InputTextBox}" HorizontalAlignment="Center" Width="250"  x:Name="CostCeilingTextBox"/>
+
+               
+
+            </StackPanel>
+
+            <StackPanel Grid.Row="1" Orientation="Vertical" HorizontalAlignment="Center">
+                <Button Style="{StaticResource addButton}" HorizontalAlignment="Center" VerticalAlignment="Center" Grid.Row="1" x:Name="SubmitButton" Grid.Column ="1" Content="Submit" Click="SubmitButton_Click"/>
+                <Button Style="{StaticResource addButton}" HorizontalAlignment="Center" VerticalAlignment="Center" Grid.Row="1"  x:Name="CancelButton" Grid.Column ="1" Content="Cancel" Click="CancelBtn_Click"/>
+            </StackPanel>
+        </Grid>
+    </Border>
+</Window>

@@ -1,0 +1,75 @@
+﻿<Application x:Class="KursovaWPF.App"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:local="clr-namespace:KursovaWPF"
+             xmlns:viewModel ="clr-namespace:KursovaWPF.MVVM.CoreViewModels"
+             xmlns:view ="clr-namespace:KursovaWPF"
+             StartupUri="Windows/LoginWindow.xaml">
+    <Application.Resources>
+        <ResourceDictionary>
+            <ResourceDictionary.MergedDictionaries>
+                <ResourceDictionary Source="Theme/MenuButtonTheme.xaml"/>
+                <ResourceDictionary Source="Theme/SearchTheme.xaml"/>
+                <ResourceDictionary Source="Theme/TableTheme.xaml"/>
+                <ResourceDictionary Source="Theme/LoginTheme.xaml"/>
+                <ResourceDictionary Source="Theme/InputTextBox.xaml"/>
+            </ResourceDictionary.MergedDictionaries>
+
+            <DataTemplate DataType="{x:Type viewModel:ContractDataVM}">
+                <view:ContractsUserControl/>
+            </DataTemplate>
+            <DataTemplate DataType="{x:Type viewModel:ContracteeDataVM}">
+                <view:ContracteeUserControl/>
+            </DataTemplate>
+            <DataTemplate DataType="{x:Type viewModel:ProjectDataVM}">
+                <view:ProjectsUserControl/>
+            </DataTemplate>
+            <DataTemplate DataType="{x:Type viewModel:ProductDataVM}">
+                <view:ProductsUserControl/>
+            </DataTemplate>
+            <DataTemplate DataType="{x:Type viewModel:ProjTaskDataVM}">
+                <view:TasksUserControl/>
+            </DataTemplate>
+            <DataTemplate DataType="{x:Type viewModel:ProdDemandDataVM}">
+                <view:DemandsUserControl/>
+            </DataTemplate>
+            <DataTemplate DataType="{x:Type viewModel:EmployeeDataVM}">
+                <view:EmployeesUserControl/>
+            </DataTemplate>
+            <DataTemplate DataType="{x:Type viewModel:EmpTeamDataVM}">
+                <view:TeamsUserControl/>
+            </DataTemplate>
+            <DataTemplate DataType="{x:Type viewModel:EmpTeamMemberDataVM}">
+                <view:TeamMembersUserControl/>
+            </DataTemplate>
+            <DataTemplate DataType="{x:Type viewModel:EmpPositionDataVM}">
+                <view:EmpPositionsUserControl/>
+            </DataTemplate>
+            <DataTemplate DataType="{x:Type viewModel:PaymentDataVM}">
+                <view:PaymentsUserControl/>
+            </DataTemplate>
+            <DataTemplate DataType="{x:Type viewModel:ProjRetrospectiveDataVM}">
+                <view:RetrospectiveUserControl/>
+            </DataTemplate>
+            <DataTemplate DataType="{x:Type viewModel:CostStatVM}">
+                <view:StatUserControl/>
+            </DataTemplate>
+            <DataTemplate DataType="{x:Type viewModel:PaymentGraphDataVM}">
+                <view:PaymentPerMonthGraph/>
+            </DataTemplate>
+            <DataTemplate DataType="{x:Type viewModel:LogDataVM}">
+                <view:LogTableUserControl/>
+            </DataTemplate>
+            <DataTemplate x:Key="NormalTemplate">
+                <view:NormalUserControlPanel/>
+            </DataTemplate>
+            <DataTemplate x:Key="PremiumTemplate">
+                <view:PremiumUserControlPanel/>
+            </DataTemplate>
+            <DataTemplate x:Key="AdminTemplate">
+                <view:AdminUserControlPanel/>
+            </DataTemplate>
+        </ResourceDictionary>
+
+    </Application.Resources>
+</Application>
